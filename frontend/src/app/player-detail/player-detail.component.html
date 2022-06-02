@@ -1,0 +1,36 @@
+<section class="player">
+  <div><img src={{player.photo}}></div>
+  <div>
+    <ul class="player">
+      <li>Name: <b>{{player.name}}</b></li>
+      <li>Age: <b>{{player.age}}</b></li>
+      <li>Nationality: <b>{{player.nationality}}</b></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="player">
+      <li>Games: <b>{{games}}</b></li>
+      <li>Goals: <b>{{goals}}</b></li>
+      <li>Assists: <b>{{assists}}</b></li>
+    </ul>
+  </div>
+</section>
+<div class="seasons" align = "center">
+  <h2>Last seasons of {{player.name}}</h2>
+<table>
+  <tr>
+    <td>Season</td>
+    <td>Team</td>
+    <td>Games</td>
+    <td>Goals</td>
+    <td>Assists</td>
+  </tr>
+  <tr *ngFor="let season of this.seasons">
+    <td>{{season.year}}</td>
+    <td><img src="{{season.team}}" height="60px"></td>
+    <td>{{season.games}}</td>
+    <td>{{season.goals}}</td>
+    <td>{{season.assists}}</td>
+  </tr>
+</table>
+</div>

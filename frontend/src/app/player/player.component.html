@@ -1,0 +1,19 @@
+<div>
+<h1>My Favourites players</h1>
+<table>
+  <tr class="title">
+    <td></td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Nationality</td>
+    <td>Current value</td>
+  </tr>
+  <tr *ngFor="let player of players" class="player" routerLink='/player/{{player.id}}'>
+    <td><img src={{player.photo}} height="60px"></td>
+    <td>{{player.name}}</td>
+    <td>{{player.age}}</td>
+    <td>{{player.nationality}}</td>
+    <td>{{player.value}}</td>
+  </tr>
+</table>
+</div>

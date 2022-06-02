@@ -1,0 +1,18 @@
+<table><tr>
+
+  <td>
+    <ul class="menu">
+      <li class="title">Countries</li>
+      <li *ngFor="let c of countries"><button (click)="selectCountry(c)" id="button.{{c}}">{{c}}</button></li>
+      <li class="title">Favs</li>
+      <li> <button routerLink="/players" id="button.favs"> My players </button></li>
+    </ul>
+  </td>
+
+  <td class="component">
+    <div>
+     <app-teams></app-teams>
+    </div>
+  </td>
+
+</tr></table>

@@ -1,0 +1,22 @@
+<h1>Top Scorers</h1>
+<a>Year: </a> <input id="year" type="number" #year value="2020" > <button (click)="getScorers(this.currentIdLeague,year.value)">Get scorers</button>
+<table style="width:100%">
+  <tr class="title">
+    <td></td>
+    <td>Name</td>
+    <td>Team</td>
+    <td>League</td>
+    <td>Goals</td>
+    <td>Assists</td>
+    <td>Current value</td>
+  </tr>
+  <tr *ngFor="let player of topScorers" class="player" (click)='addToFavs(player.player)'>
+    <td><img src={{player.player.photo}} height="60px"></td>
+    <td>{{player.player.name}}</td>
+    <td><img src={{player.statistics[0].team.logo}} height="50px"></td>
+    <td>{{player.statistics[0].league.name}}</td>
+    <td>{{player.statistics[0].goals.total}}</td>
+    <td>{{player.statistics[0].goals.assists||0}}</td>
+    <td>{{player.player.value}}</td>
+  </tr>
+</table>

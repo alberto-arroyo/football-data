@@ -1,0 +1,6 @@
+<section>
+  <a *ngFor="let league of leagues" (click)="getPlayers(leaguesId.get(league)!)">{{league}}</a>
+</section>
+<div id="players">
+  <app-league></app-league>
+</div>

@@ -1,0 +1,37 @@
+.players {
+  margin-top: 100px;
+}
+section{
+  border:none;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  padding: 8px 0 8px 16px;
+  text-decoration: none;
+  gap:15px;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+section a {
+  font-style:normal;
+  text-decoration: none;
+  display:block;
+  border:1px;
+  border-color:rgb(219, 219, 219);
+  color:#000;
+  padding: 8px 8px 8px 8px;
+  border-style:solid;
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+section a:hover {
+  background-color: rgb(0, 131, 22);
+  color: white;
+}
+.active {
+  background-color: rgb(0, 131, 22);
+  color: white;
+  font-weight: bold;
+}
