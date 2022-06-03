@@ -46,6 +46,9 @@ public class PlayerService {
     
     public void deleteById(long id) {
         playerRepository.deleteById(id);
+        for (PlayerSeason ps: this.playerSeasonRepository.findAll()){
+            if (ps.getPlayerId()==id) this.playerSeasonRepository.deleteById(ps.getId());
+        }
     }
 
     public void deleteAll() {
@@ -72,6 +75,10 @@ public class PlayerService {
     }
 
     public PlayerSeason postSeason(PlayerSeason season) {
+        for (PlayerSeason ps : this.playerSeasonRepository.findAll()){
+            if (ps.getYear().equals(season.getYear()) && ps.getPlayerId()==season.getPlayerId())
+                this.playerSeasonRepository.deleteById(ps.getId());
+        }
         return this.playerSeasonRepository.save(season);
     }
 

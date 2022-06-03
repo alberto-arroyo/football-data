@@ -9,7 +9,7 @@ import { Player, PlayerSeason, SeasonAPI } from '../interfaces';
   styleUrls: ['./player-detail.component.css']
 })
 export class PlayerDetailComponent implements OnInit {
-
+  pageId=Number(this.route.snapshot.paramMap.get('id'));
   player:Player = {id: 0, name:"", age:0, nationality:"", photo: "", value: ""};
   games = 0;
   goals = 0;
@@ -19,7 +19,7 @@ export class PlayerDetailComponent implements OnInit {
   constructor(private route:ActivatedRoute, private footballService:FootballService) { }
 
   ngOnInit(): void {
-    this.footballService.getPlayer(Number(this.route.snapshot.paramMap.get('id'))).subscribe(player=>{
+    this.footballService.getPlayer(this.pageId).subscribe(player=>{
       this.player = player;
       this.footballService.getSeasons(player.id).subscribe(seasons => {
         for(let season of seasons){

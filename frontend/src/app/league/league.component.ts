@@ -98,14 +98,12 @@ export class LeagueComponent implements OnInit {
           season.games+= (stat.games.appearences |0);
         }
         this.footballService.postSeason(season).subscribe(playerS=>{
-          console.log("SEASON POSTED");
           player.seasons!.push(playerS.id);
         });
       });
-      this.footballService.postPlayer(player).subscribe(()=> {
-        window.alert(`${player.name} has benn added to you favourites players`);
-      });
+      this.footballService.postPlayer(player).subscribe(() => {});
     }
+    window.alert(`${player.name} has benn added to you favourites players`);
   }
 
 }

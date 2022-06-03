@@ -29,4 +29,10 @@ export class PlayerComponent implements OnInit {
     this.players.push(p);
   }
 
+  delete(player:Player) {
+    this.footballService.deletePlayer(player.id).subscribe(player =>{});
+    window.alert(player.name+" has been deleted of your favourites players");
+    window.location.href = "/players";
+  }
+
 }

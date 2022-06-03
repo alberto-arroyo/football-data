@@ -17,6 +17,7 @@ export class TeamsComponent implements OnInit {
   constructor(private footballService: FootballService) { }
 
   ngOnInit(): void {
+    document.getElementById("players")!.className="invisible";
     this.currentCountry$.subscribe(league => this.getLeagues(league));
   }
 
@@ -30,6 +31,7 @@ export class TeamsComponent implements OnInit {
         this.leagues.push(league.league.name)
         this.leaguesId.set(league.league.name, league.league.id)
       }
+      document.getElementById("players")!.className="visible";
     });
   }
   consola(msg:string){

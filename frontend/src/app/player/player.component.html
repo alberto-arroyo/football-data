@@ -7,13 +7,16 @@
     <td>Age</td>
     <td>Nationality</td>
     <td>Current value</td>
+    <td></td>
   </tr>
-  <tr *ngFor="let player of players" class="player" routerLink='/player/{{player.id}}'>
-    <td><img src={{player.photo}} height="60px"></td>
-    <td>{{player.name}}</td>
-    <td>{{player.age}}</td>
-    <td>{{player.nationality}}</td>
-    <td>{{player.value}}</td>
+  <tr *ngFor="let player of players" class="player">
+    <td><img src={{player.photo}} height="60px" routerLink='/player/{{player.id}}'></td>
+    <td routerLink='/player/{{player.id}}'>{{player.name}}</td>
+    <td routerLink='/player/{{player.id}}'>{{player.age}}</td>
+    <td routerLink='/player/{{player.id}}'>{{player.nationality}}</td>
+    <td routerLink='/player/{{player.id}}'>{{player.value}}</td>
+    <td class="delete"><img src="../assets/delete.png" width="25px" (click)="delete(player)"></td>
   </tr>
 </table>
 </div>
+<label> &blank;</label>
