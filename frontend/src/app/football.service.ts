@@ -12,7 +12,7 @@ export class FootballService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'X-Rapidapi-Host': 'api-football-beta.p.rapidapi.com',
-      'X-Rapidapi-Key': '8e82239287mshfe8ae736a7141d3p11a52ajsn878bf2ab5588',//"670dea67a9msh2227738e11431c1p1516ccjsncb9b161c9ae1",
+      'X-Rapidapi-Key': '1ca8f45498msh79b41fd9e3cff77p102680jsn7e0f91c5cbdd',//"670dea67a9msh2227738e11431c1p1516ccjsncb9b161c9ae1",
     })
   }
   httpOptionsJSON = {
